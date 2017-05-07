@@ -1,13 +1,13 @@
 class RockPaperScissors
   GAME_RULE = {
     :rock => {
-      scissor: :win
+      scissor: :Win
     },
     :paper => {
-      rock: :win
+      rock: :Win
     },
     :scissors => {
-      paper: :win
+      paper: :Win
     }
   }
 
@@ -46,10 +46,10 @@ class RockPaperScissors
   end
 
   def proccess_result
-    return @player_1_result = @player_2_result = 'equal' if @player_1 == @player_2
+    return @player_1_result = @player_2_result = :Tie if @player_1 == @player_2
 
-    @player_1_result = GAME_RULE[@player_1][@player_2] || :lose
-    @player_2_result = GAME_RULE[@player_2][@player_1] || :lose
+    @player_1_result = GAME_RULE[@player_1][@player_2] || :Lose
+    @player_2_result = GAME_RULE[@player_2][@player_1] || :Lose
   end
 end
 
